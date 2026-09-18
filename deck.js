@@ -27,6 +27,7 @@ async function drawCard() {
 
   const cardImage = await result.cards[0].image;
 console.log(cardImage);
+document.getElementById("trukketkort").src=cardImage
 }
 
 document.getElementById("start").addEventListener("click", drawCard);
