@@ -20,10 +20,13 @@ getData();
 
 async function drawCard() {
   const card = await fetch(
-    `https://deckofcardsapi.com/api/deck/${deckID}/draw/`,
+    `https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`,
   );
   const result = await card.json();
   console.log(result);
+
+  const cardImage = await result.cards[0].image;
+console.log(cardImage);
 }
 
 document.getElementById("start").addEventListener("click", drawCard);
