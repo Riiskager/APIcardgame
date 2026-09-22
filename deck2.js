@@ -13,14 +13,16 @@ function shuffleDeck() {
     });
 }
 function getCard() {
-  return fetch(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`)
+  return fetch(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=2`)
     .then((response) => {
       if (!response.ok) throw new Error("Failed");
       return response.json();
     })
     .then((data) => {
       const cardImage = data.cards[0].image;
+      const cardImage2 = data.cards[1].image;
       document.getElementById("trukketkort").src = cardImage;
+      document.getElementById("trukketkort2").src = cardImage2;
     });
 }
 
