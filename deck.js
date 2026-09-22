@@ -3,7 +3,7 @@ let deckID;
 async function getData() {
   const url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
   try {
-    const response = await fetch(url);
+    const response = await fetch(url); //skal ændres til if-then statement
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -17,7 +17,7 @@ async function getData() {
 }
 
 getData();
-
+//skal ændres til if-then statement
 async function drawCard() {
   const card = await fetch(
     `https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`,
